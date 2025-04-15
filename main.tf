@@ -1,8 +1,6 @@
 provider "azurerm" {
   features {}
-resource_group {
-      prevent_deletion_if_contains_resources = false
-    }
+
 subscription_id = "fb99e83f-61c2-4969-a2b1-eccab005dbe6"
   client_id       = "efded17c-1368-4a74-8f71-21b5c00b1614"
   client_secret   = "z3O8Q~8o3DiTMgojouO~LfGgzkAepdzxjotEMa1y"
