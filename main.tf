@@ -8,7 +8,7 @@ subscription_id = "fb99e83f-61c2-4969-a2b1-eccab005dbe6"
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "devops-rg"
+  name     = "d-rg"
   location = "East US"
   }
 
