@@ -12,7 +12,7 @@ resource "tls_private_key" "ssh_key" {
 }
 resource "azurerm_resource_group" "rg" {
   name     = "d-rg"
-  location = "East US"
+  location = "North Europe"
   }
 
 resource "azurerm_virtual_network" "vnet" {
