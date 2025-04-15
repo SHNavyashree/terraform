@@ -47,7 +47,7 @@ depends_on = [
 }
 
 resource "azurerm_public_ip" "public" {
-  name                = "example-public-ip"
+  name                = "public-ip"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"  # <-- Required for Standard SKU
