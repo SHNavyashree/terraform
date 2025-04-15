@@ -11,7 +11,7 @@ resource "tls_private_key" "ssh_key" {
   rsa_bits  = 4096
 }
 resource "azurerm_resource_group" "rg" {
-  name     = "d-rg"
+  name     = "trg"
   location = "North Europe"
   }
 
@@ -47,7 +47,7 @@ depends_on = [
 }
 
 resource "azurerm_public_ip" "public" {
-  name                = "public-ip"
+  name                = "example-public-ip"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"  # <-- Required for Standard SKU
