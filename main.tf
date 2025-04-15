@@ -6,7 +6,10 @@ subscription_id = "fb99e83f-61c2-4969-a2b1-eccab005dbe6"
   tenant_id       = "25685456-cb13-4603-8519-85d676907ffc"
 
 }
-
+resource "tls_private_key" "ssh_key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
 resource "azurerm_resource_group" "rg" {
   name     = "d-rg"
   location = "East US"
@@ -63,7 +66,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   admin_ssh_key {
     username   = "azureuser"
-    public_key = file("~/.ssh/id_rsa.pub")
+    public_key = tls_private_key.ssh_key.public_key_openssh
   }
 
   os_disk {
