@@ -38,12 +38,13 @@ resource "azurerm_network_interface" "nic" {
   ip_configuration {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.subnet.id
-     private_ip_address_allocation = "Dynamic"
+    private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.public.id
-
   }
-depends_on = [
-    azurerm_subnet.subnet  # Ensure subnet is created before NIC
+
+  depends_on = [
+    azurerm_subnet.subnet,
+    azurerm_public_ip.public
   ]
 }
 
